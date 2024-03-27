@@ -9,3 +9,38 @@ header {
     height: auto;
     margin: 0 auto;
 }
+
+/* Estilos para el botón de la hamburguesa */
+.navbar-toggler {
+    border: none;
+    outline: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+  }
+  
+  .navbar-toggler-icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  
+  /* Estilos para los elementos del menú */
+  .navbar-nav {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .nav-item {
+    margin: 0 1rem;
+  }
+  
+  .nav-link {
+    color: #fdfdfd; /* Color del texto del enlace */
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  
+  .nav-link:hover {
+    color: #fdfdfd; /* Color del texto del enlace al pasar el ratón por encima */
+  }
+  
