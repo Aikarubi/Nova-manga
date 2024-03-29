@@ -1,0 +1,8 @@
+.jumbotron {
+    background-image: url('../../../assets/img/3.jpg'); /* Reemplaza 'imagen.jpg' con la ruta de tu imagen */
+     /* La imagen se ajusta para cubrir todo el jumbotron */
+    color: white; /* Cambia el color del texto para que sea legible */
+    height: 700px;
+  }
+
+  
