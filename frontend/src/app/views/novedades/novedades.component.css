@@ -1,0 +1,62 @@
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#mes-novedad {
+    font-size: 22px;
+}
+
+.card {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.card-novedad img:hover {
+    opacity: 90%;
+}
+
+.card-novedad img {
+    width: 400px;
+    height: 600px;
+    transition: transform 0.4s ease;
+}
+
+.card-novedad p {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+
+.card-novedad {
+    margin-bottom: 100px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sv, .bb {
+    height: 292px !important;
+}
+
+.amd {
+    background-color: #A1827180;
+    margin-bottom: 100px !important;
+}
+
+.sv {
+    background-color: #fde2accc;
+}
+
+.bb {
+    background-color: #f8dcdacc;
+}
+
+h5 {
+    font-weight: bold;
+}
