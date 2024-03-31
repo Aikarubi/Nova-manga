@@ -2,8 +2,58 @@ footer {
     background-color: #1A191B;
     width: 100%;
     height: auto;
+    color: #fdfdfd;
+    font-size: 17px;
 }
 
 .copy {
     background-color: #28272A;
+    font-size: 14px;
+}
+
+.copy p {
+    text-align: center;
+
+}
+
+.logo img {
+    width: 250px;
+    height: auto;
+}
+
+.mapa {
+    margin-top: 50px;
+}
+
+
+.p-interes ul {
+    list-style: none;
+    margin-left: -35px;
+}
+
+.p-interes a {
+    text-decoration: none;
+    color: #fdfdfd;
+}
+
+.p-interes a:hover {
+    text-decoration: none;
+    color: #fdfdfdC6;
+}
+
+.redes a {
+    text-decoration: none;
+}
+
+.contacto {
+    margin-top: 20px;
+}
+
+.social-icon:hover svg {
+    stroke: #FDFDFDCC;
+}
+
+h5 {
+    margin-top: 50px;
+    margin-bottom: 20px;
 }

@@ -1,21 +1,29 @@
 .jumbotron {
-    background-image: url('../../../assets/img/frieren-banner2.jpeg');
-    height: 840px;
-    background-size: cover;
-  }
-  .content-overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad al 50% */
-    padding: 20px; /* Ajusta el espaciado según sea necesario */
-    text-align: center; /* Centra el contenido */
-    border-radius: 10px; /* Añade bordes redondeados al contenedor */
-    margin-top: 480px;
-    width: 800px;
-    margin-left: 140px;
+  background-image: url('../../../assets/img/frieren-banner2.jpeg');
+  height: 840px;
+  background-size: cover;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo negro con opacidad al 50% */
+  padding: 20px;
+  /* Ajusta el espaciado según sea necesario */
+  text-align: center;
+  /* Centra el contenido */
+  border-radius: 10px;
+  /* Añade bordes redondeados al contenedor */
+  margin-top: 450px;
+  width: 800px;
+  margin-left: 140px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .content-overlay p,
 .content-overlay a {
-    color: #FDFDFD; /* Color del texto */
+  color: #FDFDFD;
+  /* Color del texto */
 }
 
 .titulo-jumbotron {
@@ -30,3 +38,92 @@
 .content-overlay .btn:hover {
   background-color: #c7a267;
 }
+
+.destacados-div {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.destacados-div a {
+  text-decoration: none;
+  color: #1A191B;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.destacados-div a:hover {
+  color: #28272AD9;
+}
+
+#gBless-card {
+  width: 935px;
+  height: 450px;
+}
+
+#gBless-text {
+  padding-left: 150px;
+  font-size: 18px;
+}
+
+#gBless-text p{
+ margin: 30px 0px;
+
+}
+
+#gBless-text h2 {
+  font-weight: 700;
+}
+
+#gBless-text .btn {
+  background-color: #48755B;
+  border-radius: 5px;
+  width: 150px;
+  color:#FDFDFD;
+}
+
+#gBless-text .btn:hover {
+  background-color: #48755BE6;
+}
+
+#gBless-color {
+  background-color: #BAD0E326;
+  
+}
+
+
+.primavera {
+  background-image: url(../../../assets/img/Kanna_Kii_Collection.jpg);
+  background-size: cover;
+  height: 500px;
+  font-family: Poppins !important;
+  margin-bottom: 60px;
+}
+
+#primavera-text {
+  font-size: 18px;
+}
+
+#primavera-text p{
+ margin: 35px 0px;
+ background-color: #453B3980;
+ padding: 20px 20px;
+ margin-left: 27px;
+ color: #FDFDFD;
+}
+
+.primavera h2 {
+  font-weight: 700;
+}
+
+#primavera-text .btn {
+  background-color: #453B39;
+  border-radius: 5px;
+  width: 150px;
+  color:#FDFDFD;
+}
+
+#primavera-text .btn:hover {
+  background-color: #453B39E6;
+}
+

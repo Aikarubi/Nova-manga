@@ -28,6 +28,7 @@ header {
   .navbar-nav {
     text-align: center;
     margin-top: 10px;
+    margin-left: 25px;
   }
   
   .nav-item {
