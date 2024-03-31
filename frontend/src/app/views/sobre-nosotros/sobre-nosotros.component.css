@@ -1,0 +1,10 @@
+h1 {
+    margin: 50px 400px;
+}
+
+p {
+    margin: 0px 400px 20px 400px;
+    font-size: 20px;
+}
+
+p:last-child { margin-bottom: 50px;}
