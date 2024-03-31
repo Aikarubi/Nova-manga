@@ -1,8 +1,32 @@
 .jumbotron {
-    background-image: url('../../../assets/img/3.jpg'); /* Reemplaza 'imagen.jpg' con la ruta de tu imagen */
-     /* La imagen se ajusta para cubrir todo el jumbotron */
-    color: white; /* Cambia el color del texto para que sea legible */
-    height: 700px;
+    background-image: url('../../../assets/img/frieren-banner2.jpeg');
+    height: 840px;
+    background-size: cover;
   }
+  .content-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad al 50% */
+    padding: 20px; /* Ajusta el espaciado según sea necesario */
+    text-align: center; /* Centra el contenido */
+    border-radius: 10px; /* Añade bordes redondeados al contenedor */
+    margin-top: 480px;
+    width: 800px;
+    margin-left: 140px;
+}
 
-  
+.content-overlay p,
+.content-overlay a {
+    color: #FDFDFD; /* Color del texto */
+}
+
+.titulo-jumbotron {
+  text-align: center;
+}
+
+.content-overlay .btn {
+  background-color: #B2915D;
+  border-radius: 5px;
+}
+
+.content-overlay .btn:hover {
+  background-color: #c7a267;
+}
