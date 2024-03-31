@@ -1,4 +1,17 @@
 .enero-pe { background-color: #A1827180;}
 .febrero-pe { background-color: #fde2accc;}
 .marzo-pe { background-color: #f8dcdab3;}
-.abril-pe { background-color: #e2d6aa99;}
+.abril-pe { background-color: #e2d6aa99; margin-bottom: 50px;}
+
+h1 {
+    margin: 40px 0px;
+}
+
+h5 {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin-top: 20px;
+}
