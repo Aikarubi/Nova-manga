@@ -1,0 +1,86 @@
+#ruta {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+#ruta a {
+    text-decoration: none;
+    color: #1A191B;
+}
+
+#ruta a:hover {
+    text-decoration: none;
+    color: #1A191B80;
+}
+
+#ruta:last-child {
+    color: #28272A80;
+}
+
+img {
+    margin-bottom: 100px;
+    width: 400px;
+    height: 510px;
+    border-radius: 2px;
+}
+
+#titulo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#precio {
+    font-size: 1.3rem;
+    color: #959595;
+    margin: 15px 0px;
+}
+
+#autor {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#autor svg {
+    margin: -5px -2px 0px -5px;
+}
+
+#sinopsis {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+#formato,
+#tamaño,
+#pag,
+#isbn,
+#fecha {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+#compra {
+    background-color: #48755B;
+    border-radius: 5px;
+    width: 150px;
+    color:#FDFDFD;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+
+#compra:hover {
+    background-color: #48755BE6;
+}
+
+
+  .col-5 {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 510px;
+}
+
