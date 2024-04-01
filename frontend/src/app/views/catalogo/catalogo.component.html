@@ -1,62 +1,86 @@
 <div class="container">
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
-            <h1> LISTADO </h1>
-        </div>
-        <div class="col-3"></div>
-        <div class="col-3">
-            <h5>Filtrar:</h5>
-            <ul>
-                <li>Autor</li>
-                <li>Editorial</li>
-                <li>Fecha de venta</li>
-            </ul>
-        </div>
-        <div class="col-6"></div>
-        <div class="col-3">
-            <h5>100 productos</h5>
-        </div>
-        <div class="col-2"></div>
-        <div class="col-8">
-            <div class="card-check d-flex">
-                <div class="card mr-3">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-
-                <div class="card mr-3">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+      <div class="col-3"></div>
+      <div class="col-6">
+        <h1> CATÁLOGO </h1>
+      </div>
+      <div class="col-3"></div>
+      <div class="col-12 mt-3">
+        <h5>Filtrar:</h5>
+      </div>
+      <div class="col-12 mt-3">
+        <div class="row">
+          <div class="col-4">
+            <label for="autores" class="form-label">Autor:</label>
+            <select id="autores" class="form-select">
+              <option value="todos">Todos</option>
+              <option value="autor1">Inio Asano</option>
+              <option value="autor2">Aka Akasaka</option>
+              <option value="autor3">Junji Ito</option>
+            </select>
+          </div>
+          <div class="col-4">
+            <label for="editoriales" class="form-label">Editorial:</label>
+            <select id="editoriales" class="form-select">
+              <option value="todas">Todas</option>
+              <option value="editorial1">Distrito Manga</option>
+              <option value="editorial2">Planeta</option>
+              <option value="editorial3">Norma Comics</option>
+            </select>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+                <label for="fecha" class="form-label">Fecha de Venta:</label>
+                <select id="ordenFecha" class="form-select">
+                  <option value="reciente">Más Reciente - Más Antiguo</option>
+                  <option value="antiguo">Más Antiguo - Más Reciente</option>
+                </select>
             </div>
+          </div>
         </div>
-        <div class="col-2"></div>
+      </div>
+      <div class="col-12 mt-4">
+        <div class="row" id="librosContainer">
+          <!-- Las tarjetas de libros se cargarán aquí -->
+          <div class="col-4">
+            <div class="card mb-3">
+                <a href="#">
+              <img class="card-img-top" src="../../../assets/mangas/shikimori/6.jpg" alt="Card image cap">
+            </a>
+              <div class="card-body">
+                <h5 class="card-title">Shikimori, Vol. 6</h5>
+              </div>
+              <div class="card-footer">
+                <p class="text-muted">9.95 €</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-4">
+            <div class="card mb-3">
+              <img class="card-img-top" src="../../../assets/mangas/frieren/9.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Frieren, Vol. 9</h5>
+              </div>
+              <div class="card-footer">
+                <p class="text-muted">9.00 €</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-4">
+            <div class="card mb-3">
+              <img class="card-img-top" src="../../../assets/mangas/oshi-no-ko/13.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Oshi No Ko, Vol. 13</h5>
+              </div>
+              <div class="card-footer">
+                <p class="text-muted">9.00€</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  
