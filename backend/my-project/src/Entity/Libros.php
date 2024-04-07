@@ -9,8 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Libros
 {
     #[ORM\Id]
-    #[ORM\Column]
-    private ?int $isbn = null;
+    #[ORM\Column(type: "string", length: 20)]
+    private ?string $isbn = null;
 
     #[ORM\Column(name: "nombre", type: "string", length: 255, nullable: false)]
     private string $nombre;
@@ -38,7 +38,14 @@ class Libros
     #[ORM\JoinColumn(nullable: false)]
     private ?Autor $autor = null;
 
-    public function getIsbn(): ?int
+    public function setIsbn(string $isbn): self
+    {
+        $this->isbn = $isbn;
+
+        return $this;
+    }
+
+    public function getIsbn(): ?string
     {
         return $this->isbn;
     }
