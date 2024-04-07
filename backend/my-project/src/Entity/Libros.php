@@ -38,6 +38,9 @@ class Libros
     #[ORM\JoinColumn(nullable: false)]
     private ?Autor $autor = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $portada = null;
+
     public function setIsbn(string $isbn): self
     {
         $this->isbn = $isbn;
@@ -142,6 +145,18 @@ class Libros
     public function setAutor(?Autor $autor): self
     {
         $this->autor = $autor;
+
+        return $this;
+    }
+
+    public function getPortada(): ?string
+    {
+        return $this->portada;
+    }
+
+    public function setPortada(string $portada): static
+    {
+        $this->portada = $portada;
 
         return $this;
     }
