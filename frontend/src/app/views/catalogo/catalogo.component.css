@@ -1,84 +1,84 @@
 h1 {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 img {
-    width: 348px;
-    height: 470px;
+  width: 348px;
+  height: 470px;
 }
 
 .card {
-    border: none;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: transform 0.4s ease;
 }
 
 .card:hover {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  transform: translateY(-5px);
 }
 
-.card-footer p{
-    margin-bottom: -5px;
-    text-align: center;
-    font-weight: bold;
+.card-footer p {
+  margin-bottom: -5px;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* Estilo para el contenedor de los elementos de filtrado */
 .col-12.mt-3 {
-    margin-top: 1.5rem;
-  }
-  
-  /* Estilo para el título "Filtrar" */
-  .col-12.mt-3 h5 {
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  /* Estilo para los selectores de autor, editorial y fecha */
-  .col-4 {
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Estilo para las etiquetas de los selectores */
-  .form-label {
-    font-weight: bold;
-    color: #666;
-  }
-  
-  /* Estilo para los selectores */
-  .form-select {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #555;
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-    border-radius: 0.5rem;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  
-  /* Estilo cuando se enfoca en los selectores */
-  .form-select:focus {
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  }
-  
-  /* Estilo para las opciones de los selectores */
-  .form-select option {
-    color: #555;
-  }
-  
-  /* Estilo para el contenedor de los selectores */
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
+  margin-top: 1.5rem;
+}
 
-  .form-select:focus {
-    background-color: #e9ecef;
-  }
+/* Estilo para el título "Filtrar" */
+.col-12.mt-3 h5 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Estilo para los selectores de autor, editorial y fecha */
+.col-4 {
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo para las etiquetas de los selectores */
+.form-label {
+  font-weight: bold;
+  color: #666;
+}
+
+/* Estilo para los selectores */
+.form-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Estilo cuando se enfoca en los selectores */
+.form-select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo para las opciones de los selectores */
+.form-select option {
+  color: #555;
+}
+
+/* Estilo para el contenedor de los selectores */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+
+.form-select:focus {
+  background-color: #e9ecef;
+}

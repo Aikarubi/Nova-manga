@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BibliotecaService } from '../../services/biblioteca/biblioteca.service';
+import { Response } from '../../interfaces/response';
 
 @Component({
   selector: 'app-catalogo',
@@ -8,7 +9,10 @@ import { BibliotecaService } from '../../services/biblioteca/biblioteca.service'
   templateUrl: './catalogo.component.html',
   styleUrl: './catalogo.component.css'
 })
-export class CatalogoComponent {
+export class CatalogoComponent implements OnInit {
+
+/*public libros: Response[] = [];
+
 public constructor(public service: BibliotecaService) {}
 
 public getResponse(): void {
@@ -19,5 +23,18 @@ public getResponse(): void {
 
 public ngOnInit(): void {
   this.getResponse();
+}*/
+
+libros: Response[] = [];
+
+constructor(private bibliotecaService: BibliotecaService) { }
+
+ngOnInit(): void {
+  this.getLibros();
+}
+
+getLibros(): void {
+  this.bibliotecaService.getLibros()
+    .subscribe(libros => this.libros = libros);
 }
 }

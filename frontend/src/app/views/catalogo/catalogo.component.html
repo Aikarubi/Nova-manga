@@ -79,6 +79,20 @@
               </div>
             </div>
           </div>
+
+          @for (libro of libros; track libro; let i = $index) {
+          <div class="col-4">
+            <div class="card mb-3">
+              <img class="card-img-top" src="{{libro.portada}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{libro.nombre}}</h5>
+              </div>
+              <div class="card-footer">
+                <p class="text-muted">{{libro.precio}}€</p>
+              </div>
+            </div>
+          </div>
+        }
         </div>
       </div>
     </div>
