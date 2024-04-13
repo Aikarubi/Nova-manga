@@ -6,6 +6,8 @@ import { SobreNosotrosComponent } from './views/sobre-nosotros/sobre-nosotros.co
 import { PoliticaPrivacidadComponent } from './views/politica-privacidad/politica-privacidad.component';
 import { DetalleComponent } from './views/detalle/detalle.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { PanelLayoutComponent } from './layouts/panel-layout/panel-layout.component';
+import { PanelComponent } from './views/panel/panel.component';
 
 export const routes: Routes = [
 
@@ -20,6 +22,13 @@ export const routes: Routes = [
             { path: 'sobre-nosotros', component: SobreNosotrosComponent },
             { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
             { path: 'detalle', component: DetalleComponent }
+        ]
+    },
+    {
+        path: '',
+        component: PanelLayoutComponent,
+        children: [
+            { path: 'panel', component: PanelComponent },
         ]
     }
 
