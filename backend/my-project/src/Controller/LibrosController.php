@@ -8,6 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Libros;
+use App\Entity\Editorial;
+use App\Entity\Autor;
 
 class LibrosController extends AbstractController
 {
@@ -42,6 +44,10 @@ class LibrosController extends AbstractController
         $entityManager = $doctrine->getManager();
         $data = json_decode($request->getContent(), true);
 
+        // Obtenemos las entidades Autor y Editorial a partir de las IDs
+        $autor = $entityManager->getRepository(Autor::class)->find($data['autor_id']);
+        $editorial = $entityManager->getRepository(Editorial::class)->find($data['editorial_id']);
+
         $libro = new Libros();
         $libro->setIsbn($data['isbn']);
         $libro->setNombre($data['nombre']);
@@ -51,8 +57,8 @@ class LibrosController extends AbstractController
         $libro->setPaginas($data['paginas']);
         $libro->setPortada($data['portada']);
         $libro->setFechaVenta(new \DateTime($data['fecha_venta']));
-        $libro->setEditorial($data['editorial_id']);
-        $libro->setAutor($data['autor_id']);
+        $libro->setEditorial($editorial);
+        $libro->setAutor($autor);
 
         $entityManager->persist($libro);
         $entityManager->flush();
