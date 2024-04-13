@@ -48,4 +48,30 @@
   }
   
 
-  
+  /* Estilos para los botones de paginación */
+.pagination {
+  margin: 20px 0;
+}
+
+.pagination button {
+  background-color: #28272ae1;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #28272ac9;
+}
+
+.pagination .active {
+  background-color: #28272a;
+}
+
+svg {
+  margin: 0px 0px 0px 20px;
+  cursor: pointer;
+}

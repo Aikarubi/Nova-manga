@@ -8,31 +8,24 @@ import { Response } from '../../interfaces/response';
 })
 export class BibliotecaService {
 
-  /*private urlAPI: string = 'http://localhost:8000/libros';
-
-  constructor(public http: HttpClient) { }
-*/
-  /*public getResponse(): Observable<Response> {
-    return this.http.get<Response>('http://localhost:8000/libros');
-  }*/
-
-    /**
-   * Gets all the users from the API.
-   * @returns {Response[]}
-   */
-    /*public getLibros(): Observable<Response[]> {
-      const urlGetAllLibros: string = `${this.urlAPI}libros`;
-  
-      return this.http.get<Response[]>(urlGetAllLibros);
-    } */
-  
     private urlAPI: string = 'http://localhost:8000/';
 
     constructor(public http: HttpClient) { }
   
     public getLibros(): Observable<Response[]> {
-      const urlGetAllLibros: string = `${this.urlAPI}libros`; // Asegúrate de agregar un "/" después de "8000" para separar el dominio de la ruta
+      const urlGetAllLibros: string = `${this.urlAPI}libros`; 
     
       return this.http.get<Response[]>(urlGetAllLibros);
+    }
+
+    public agregarLibro(libroData: any): Observable<any> {
+      const urlInsertLibro: string = `${this.urlAPI}insert/libros`; 
+    
+      return this.http.post<any>(urlInsertLibro, libroData);
+    }
+
+    public actualizarLibro(isbn: string, datosLibro: any): Observable<any> {
+      const urlActualizarLibro: string = `${this.urlAPI}update/libros/${isbn}`; 
+      return this.http.put(urlActualizarLibro, datosLibro);
     }
 }

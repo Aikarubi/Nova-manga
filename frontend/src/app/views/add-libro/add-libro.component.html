@@ -2,47 +2,47 @@
     <div class="row">
         <div class="col-12">
             <h1>Añadir Libro</h1>
-            <form>
+            <form [formGroup]="libroForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col-4">
                         <label for="isbn" class="form-label">ISBN</label>
-                        <input type="text" class="form-control" id="isbn">
+                        <input type="text" class="form-control" id="isbn" formControlName="isbn">
                     </div>
                     <div class="col-4">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre">
+                        <input type="text" class="form-control" id="nombre" formControlName="nombre">
                     </div>
                     <div class="col-4">
                         <label for="precio" class="form-label">Precio</label>
-                        <input type="number" class="form-control" id="precio">
+                        <input type="number" class="form-control" id="precio" formControlName="precio">
                     </div>
                     <div class="col-12">
                         <label for="descripcion" class="form-label">Descripción</label>
-                        <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                        <textarea class="form-control" id="descripcion" rows="3" formControlName="descripcion"></textarea>
                     </div>
                     <div class="col-4">
                         <label for="tamanyo" class="form-label">Tamaño</label>
-                        <input type="text" class="form-control" id="tamanyo">
+                        <input type="text" class="form-control" id="tamanyo" formControlName="tamanyo">
                     </div>
                     <div class="col-4">
                         <label for="paginas" class="form-label">Páginas</label>
-                        <input type="number" class="form-control" id="paginas">
+                        <input type="number" class="form-control" id="paginas" formControlName="paginas">
                     </div>
                     <div class="col-4">
-                        <label for="fechaVenta" class="form-label">Fecha de Venta</label>
-                        <input type="date" class="form-control" id="fechaVenta">
+                        <label for="fecha_venta" class="form-label">Fecha de Venta</label>
+                        <input type="date" class="form-control" id="fecha_venta" formControlName="fecha_venta">
                     </div>
                     <div class="col-4">
-                        <label for="editorialId" class="form-label">Editorial ID</label>
-                        <input type="number" class="form-control" id="editorialId">
+                        <label for="editorial_id" class="form-label">Editorial ID</label>
+                        <input type="number" class="form-control" id="editorial_id" formControlName="editorial_id">
                     </div>
                     <div class="col-4">
-                        <label for="autorId" class="form-label">Autor ID</label>
-                        <input type="text" class="form-control" id="autorId">
+                        <label for="autor_id" class="form-label">Autor ID</label>
+                        <input type="number" class="form-control" id="autor_id" formControlName="autor_id">
                     </div>
                     <div class="col-4">
                         <label for="portada" class="form-label">Elija la portada</label>
-                        <input class="form-control" type="file" id="portada">
+                        <input class="form-control" type="text" id="portada" formControlName="portada" placeholder="/assets/mangas/inicialesDelManga/imagen.jpg">
                     </div>
                     <div class="col-12 text-center">
                         <button type="submit" class="btn btn-dark btn-add">Añadir Libro</button>
