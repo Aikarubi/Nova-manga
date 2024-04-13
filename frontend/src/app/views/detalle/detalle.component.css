@@ -22,7 +22,7 @@
 img {
     margin-bottom: 100px;
     width: 400px;
-    height: 510px;
+    height: 520px;
     border-radius: 2px;
 }
 
@@ -76,11 +76,11 @@ img {
 }
 
 
-  .col-5 {
+  .info {
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: 510px;
+  height: 520px;
 }
 
