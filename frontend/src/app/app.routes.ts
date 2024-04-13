@@ -8,6 +8,7 @@ import { DetalleComponent } from './views/detalle/detalle.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { PanelLayoutComponent } from './layouts/panel-layout/panel-layout.component';
 import { PanelComponent } from './views/panel/panel.component';
+import { PanelLibrosComponent } from './views/panel-libros/panel-libros.component';
 
 export const routes: Routes = [
 
@@ -29,6 +30,7 @@ export const routes: Routes = [
         component: PanelLayoutComponent,
         children: [
             { path: 'panel', component: PanelComponent },
+            { path: 'panel-libros', component: PanelLibrosComponent },
         ]
     }
 
