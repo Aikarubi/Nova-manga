@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-panel-libros',
+  selector: 'app-panel-autores',
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './panel-libros.component.html',
-  styleUrl: './panel-libros.component.css'
+  templateUrl: './panel-autores.component.html',
+  styleUrl: './panel-autores.component.css'
 })
-export class PanelLibrosComponent {
+export class PanelAutoresComponent {
 
 }

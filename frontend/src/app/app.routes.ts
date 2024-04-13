@@ -9,6 +9,8 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { PanelLayoutComponent } from './layouts/panel-layout/panel-layout.component';
 import { PanelComponent } from './views/panel/panel.component';
 import { PanelLibrosComponent } from './views/panel-libros/panel-libros.component';
+import { PanelAutoresComponent } from './views/panel-autores/panel-autores.component';
+import { PanelEditorialesComponent } from './views/panel-editoriales/panel-editoriales.component';
 
 export const routes: Routes = [
 
@@ -31,6 +33,8 @@ export const routes: Routes = [
         children: [
             { path: 'panel', component: PanelComponent },
             { path: 'panel-libros', component: PanelLibrosComponent },
+            { path: 'panel-autores', component: PanelAutoresComponent },
+            { path: 'panel-editoriales', component: PanelEditorialesComponent }
         ]
     }
 
