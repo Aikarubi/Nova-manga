@@ -36,6 +36,13 @@ class Editorial
         return $this->nombre;
     }
 
+    public function setNombre(string $nombre): self
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
     // Solo el método get para acceder a la colección de libros
     public function getLibros(): Collection
     {
