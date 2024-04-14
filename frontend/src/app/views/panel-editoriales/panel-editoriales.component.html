@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <h1><a routerLink="/panel" routerLinkActive="active">Panel Administrativo</a> > Administrar
-                Autores</h1>
+                Editoriales</h1>
         </div>
         <div class="col-2"></div>
         <div class="col-8">
@@ -17,9 +17,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <td>1</td>
-                            <td>mi abuela</td>
-                            <td>(iconos)</td>
+                            @for (editorial of getEditorialesPaginadas(); track editorial) {
+                            <tr>
+                                <td>{{ editorial.id }}</td>
+                                <td>{{ editorial.nombre }}</td>
+                                <td>
+                                    <a routerLink="/update-editorial/{{editorial.id}}" routerLinkActive="active">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                            <path
+                                                d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                            <path d="M16 5l3 3" />
+                                        </svg>
+                                    </a>
+                                    <a (click)="eliminarEditorial(editorial.id)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
                         </tbody>
                     </table>
                 </div>
@@ -31,7 +61,17 @@
                     </a>
                 </div>
                 <div class="col-6">
-                    <button class="btn btn-dark btn-add">Añadir Autor</button>
+                    <a routerLink="/add-editorial" routerLinkActive="active">
+                        <button class="btn btn-dark btn-add">Añadir editorial</button>
+                    </a>
+                </div>
+                <div class="col-12 pagination">
+                    @for (numeroPagina of paginas; track numeroPagina) {
+                    <button [class.active]="numeroPagina === paginaActual" (click)="cambiarPagina(numeroPagina)">
+                        {{ numeroPagina }}
+                    </button>
+
+                    }
                 </div>
             </div>
         </div>

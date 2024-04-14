@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateLibroComponent implements OnInit {
 
-  libroForm: FormGroup;
+  public libroForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,

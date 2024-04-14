@@ -13,6 +13,10 @@ import { PanelAutoresComponent } from './views/panel-autores/panel-autores.compo
 import { PanelEditorialesComponent } from './views/panel-editoriales/panel-editoriales.component';
 import { AddLibroComponent } from './views/add-libro/add-libro.component';
 import { UpdateLibroComponent } from './views/update-libro/update-libro.component';
+import { AddAutorComponent } from './views/add-autor/add-autor.component';
+import { UpdateAutorComponent } from './views/update-autor/update-autor.component';
+import { AddEditorialComponent } from './views/add-editorial/add-editorial.component';
+import { UpdateEditorialComponent } from './views/update-editorial/update-editorial.component';
 
 export const routes: Routes = [
 
@@ -38,7 +42,11 @@ export const routes: Routes = [
             { path: 'panel-autores', component: PanelAutoresComponent },
             { path: 'panel-editoriales', component: PanelEditorialesComponent },
             { path: 'add-libro', component: AddLibroComponent },
-            { path: 'update-libro/:isbn', component: UpdateLibroComponent}
+            { path: 'update-libro/:isbn', component: UpdateLibroComponent},
+            { path: 'add-autor', component: AddAutorComponent},
+            { path: 'update-autor/:id', component: UpdateAutorComponent},
+            { path: 'add-editorial', component: AddEditorialComponent},
+            { path: 'update-editorial/:id', component: UpdateEditorialComponent}
         ]
     }
 

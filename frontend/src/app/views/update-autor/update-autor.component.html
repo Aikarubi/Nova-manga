@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Actualizar Autor</h1>
+            <form [formGroup]="autorForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="id" class="form-label">ID</label>
+                        <input type="number" class="form-control" id="id" formControlName="id">
+                    </div>
+                    <div class="col-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-dark btn-add">Actualizar Autor</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
