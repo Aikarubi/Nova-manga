@@ -53,7 +53,8 @@ class LibrosController extends AbstractController
     }
 
     #[Route('/libros/{isbn}', name: 'app_unLibro', methods: ['GET'])]
-    public function unLibro(ManagerRegistry $doctrine, string $isbn): JsonResponse {
+    public function unLibro(ManagerRegistry $doctrine, string $isbn): JsonResponse
+    {
 
         $libro = $doctrine->getRepository(Libros::class)->find($isbn);
 
@@ -85,7 +86,7 @@ class LibrosController extends AbstractController
                 'nombre' => $libro->getEditorial()->getNombre(),
                 // Agrega otras propiedades de la editorial que necesites
             ] : null,
-            ];
+        ];
 
         return $this->json($data);
     }
@@ -210,4 +211,5 @@ class LibrosController extends AbstractController
 
         return $this->json('Libro eliminado correctamente, con el ISBN ' . $isbn);
     }
+
 }
