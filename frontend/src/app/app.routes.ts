@@ -12,6 +12,7 @@ import { PanelLibrosComponent } from './views/panel-libros/panel-libros.componen
 import { PanelAutoresComponent } from './views/panel-autores/panel-autores.component';
 import { PanelEditorialesComponent } from './views/panel-editoriales/panel-editoriales.component';
 import { AddLibroComponent } from './views/add-libro/add-libro.component';
+import { UpdateLibroComponent } from './views/update-libro/update-libro.component';
 
 export const routes: Routes = [
 
@@ -37,6 +38,7 @@ export const routes: Routes = [
             { path: 'panel-autores', component: PanelAutoresComponent },
             { path: 'panel-editoriales', component: PanelEditorialesComponent },
             { path: 'add-libro', component: AddLibroComponent },
+            { path: 'update-libro/:isbn', component: UpdateLibroComponent}
         ]
     }
 

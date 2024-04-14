@@ -52,6 +52,48 @@ class LibrosController extends AbstractController
         return $this->json($data);
     }
 
+    #[Route('/libros/{isbn}', name: 'app_unLibro', methods: ['GET'])]
+    public function unLibro(ManagerRegistry $doctrine, string $isbn): JsonResponse {
+
+        $libro = $doctrine->getRepository(Libros::class)->find($isbn);
+
+        if (!$libro) {
+            return $this->json('Libro no encontrado para el ISBN ' . $isbn, 404);
+        }
+
+        $fechaVenta = $libro->getFechaVenta();
+
+        // Formatea la fecha de venta como "YYYY-MM-DD"
+        $fechaVentaFormateada = $fechaVenta ? $fechaVenta->format('Y-m-d') : null;
+
+        $data = [
+            'isbn' => $libro->getIsbn(),
+            'nombre' => $libro->getNombre(),
+            'precio' => $libro->getPrecio(),
+            'descripcion' => $libro->getDescripcion(),
+            'tamanyo' => $libro->getTamanyo(),
+            'paginas' => $libro->getPaginas(),
+            'portada' => $libro->getPortada(),
+            'fecha_venta' => $fechaVentaFormateada,
+            'autor' => $libro->getAutor() ? [
+                'id' => $libro->getAutor()->getId(),
+                'nombre' => $libro->getAutor()->getNombre(),
+                // Agrega otras propiedades del autor que necesites
+            ] : null,
+            'editorial' => $libro->getEditorial() ? [
+                'id' => $libro->getEditorial()->getId(),
+                'nombre' => $libro->getEditorial()->getNombre(),
+                // Agrega otras propiedades de la editorial que necesites
+            ] : null,
+            ];
+
+        return $this->json($data);
+    }
+
+
+
+
+
     #[Route('/insert/libros', name: 'app_insertLibros', methods: ['POST'])]
     public function insertLibros(ManagerRegistry $doctrine, Request $request): JsonResponse
     {
@@ -151,5 +193,21 @@ class LibrosController extends AbstractController
         ];
 
         return $this->json($responseData);
+    }
+
+    #[Route('/delete/libros/{isbn}', name: 'app_deleteLibros', methods: ['DELETE'])]
+    public function deleteLibros(ManagerRegistry $doctrine, string $isbn): JsonResponse
+    {
+        $entityManager = $doctrine->getManager();
+        $libro = $entityManager->getRepository(Libros::class)->find($isbn);
+
+        if (!$libro) {
+            return $this->json('Libro no encontrado para el ISBN ' . $isbn, 404);
+        }
+
+        $entityManager->remove($libro);
+        $entityManager->flush();
+
+        return $this->json('Libro eliminado correctamente, con el ISBN ' . $isbn);
     }
 }

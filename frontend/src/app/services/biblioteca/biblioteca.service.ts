@@ -28,4 +28,14 @@ export class BibliotecaService {
       const urlActualizarLibro: string = `${this.urlAPI}update/libros/${isbn}`; 
       return this.http.put(urlActualizarLibro, datosLibro);
     }
+
+    public obtenerLibro(isbn: string): Observable<any> {
+      const urlObtenerLibro: string = `${this.urlAPI}libros/${isbn}`;
+      return this.http.get<any>(urlObtenerLibro);
+    }
+
+    public eliminarLibro(isbn: string): Observable<any> {
+      const urlEliminarLibro: string = `${this.urlAPI}delete/libros/${isbn}`;
+      return this.http.delete(urlEliminarLibro);
+    }
 }

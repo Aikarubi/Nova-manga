@@ -43,6 +43,21 @@ export class PanelLibrosComponent implements OnInit{
     return this.libros.slice(indiceInicial, indiceFinal);
   }
   
+  public eliminarLibro(isbn: string): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este libro?')) {
+      this.bibliotecaService.eliminarLibro(isbn).subscribe({
+        next: (response) => {
+          console.log('Libro eliminado:', response);
+          // Realiza acciones adicionales después de eliminar el libro, como actualizar la lista de libros
+          window.location.reload();
+        },
+        error: (error) => {
+          console.error('Error al eliminar el libro:', error);
+          // Maneja errores de eliminación de libros, como mostrar un mensaje de error al usuario
+        }
+      });
+    }
+  }
   
 
 }
