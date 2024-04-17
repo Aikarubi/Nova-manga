@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BibliotecaService } from '../../services/biblioteca/biblioteca.service';
 import { Response } from '../../interfaces/response';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalogo',
@@ -11,30 +12,38 @@ import { Response } from '../../interfaces/response';
 })
 export class CatalogoComponent implements OnInit {
 
-/*public libros: Response[] = [];
+  /*public libros: Response[] = [];
+  
+  public constructor(public service: BibliotecaService) {}
+  
+  public getResponse(): void {
+    this.service.getResponse().subscribe((response) => {
+    console.log(response);
+  });
+  }
+  
+  public ngOnInit(): void {
+    this.getResponse();
+  }*/
 
-public constructor(public service: BibliotecaService) {}
+  libros: Response[] = [];
 
-public getResponse(): void {
-  this.service.getResponse().subscribe((response) => {
-  console.log(response);
-});
-}
+  constructor(private bibliotecaService: BibliotecaService, private router: Router) { }
 
-public ngOnInit(): void {
-  this.getResponse();
-}*/
+  ngOnInit(): void {
+    this.getLibros();
+  }
 
-libros: Response[] = [];
+  getLibros(): void {
+    this.bibliotecaService.getLibros()
+      .subscribe(libros => this.libros = libros);
+  }
 
-constructor(private bibliotecaService: BibliotecaService) { }
 
-ngOnInit(): void {
-  this.getLibros();
-}
+  public verDetalle(isbn: string): void {
+    this.router.navigate(['/detalle', isbn]);
+  }
 
-getLibros(): void {
-  this.bibliotecaService.getLibros()
-    .subscribe(libros => this.libros = libros);
-}
+
+  
 }

@@ -42,48 +42,10 @@
       <div class="col-12 mt-4">
         <div class="row" id="librosContainer">
           <!-- Las tarjetas de libros se cargarán aquí -->
-          <div class="col-4">
-            <div class="card mb-3">
-                <a href="#">
-              <img class="card-img-top" src="../../../assets/mangas/shikimori/6.jpg" alt="Card image cap">
-            </a>
-              <div class="card-body">
-                <h5 class="card-title">Shikimori, Vol. 6</h5>
-              </div>
-              <div class="card-footer">
-                <p class="text-muted">9.95 €</p>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-4">
-            <div class="card mb-3">
-              <img class="card-img-top" src="../../../assets/mangas/frieren/9.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Frieren, Vol. 9</h5>
-              </div>
-              <div class="card-footer">
-                <p class="text-muted">9.00 €</p>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-4">
-            <div class="card mb-3">
-              <img class="card-img-top" src="../../../assets/mangas/oshi-no-ko/13.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Oshi No Ko, Vol. 13</h5>
-              </div>
-              <div class="card-footer">
-                <p class="text-muted">9.00€</p>
-              </div>
-            </div>
-          </div>
-
           @for (libro of libros; track libro; let i = $index) {
           <div class="col-4">
             <div class="card mb-3">
-              <img class="card-img-top" src="{{libro.portada}}" alt="Card image cap">
+              <img class="card-img-top" src="{{libro.portada}}" (click)="verDetalle(libro.isbn)" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{libro.nombre}}</h5>
               </div>

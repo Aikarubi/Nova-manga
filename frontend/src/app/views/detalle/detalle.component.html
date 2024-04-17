@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <p id="ruta"><a routerLink="../home" routerLinkActive="active"> INICIO</a> > <a routerLink="../catalogo"
-                    routerLinkActive="active"> CATÁLOGO </a> > <b>SHADOW HOUSE, VOL. 1</b></p>
+            <p id="ruta"><a routerLink="../../home" routerLinkActive="active">INICIO</a> > <a routerLink="../../catalogo"
+                    routerLinkActive="active"> CATÁLOGO </a> > <b>{{libro.nombre}}</b></p>
         </div>
         <div class="col-3"></div>
         <div class="container">
@@ -11,33 +11,32 @@
                 <div class="col-2"></div>
                 <div class="col-4">
                     <!-- Imagen grande en el medio -->
-                    <img src="https://www.milkywayediciones.com/cdn/shop/products/shadow_house_1.png?v=1592207340&width=832"
-                        alt="Portada del libro" class="img-fluid">
+                    <img [src]="libro.portada" alt="Portada del libro" class="img-fluid">
                 </div>
                 <div class="col-6 info">
                     <!-- Información a la derecha -->
-                    <h3 id="titulo">SHADOW HOUSE, VOL. 1</h3>
-                    <h5 id="precio">9,00 €</h5>
+                    <h3 id="titulo">{{libro.nombre}}</h3>
+                    <h5 id="precio">{{libro.precio}} €</h5>
                     <h5 id="autor">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-user" style="vertical-align: middle;">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-user"
+                            style="vertical-align: middle;">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
                             <path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" />
                         </svg>
-                        SOMATO
+                        {{libro.autor.nombre}}
                     </h5>
 
-                    <p id="sinopsis">Los Shadow son un clan sin rostro que imita el estilo de vida de la nobleza. Tienen
-                        a su servicio muñecas vivientes que actúan como su cara visible. En esta extraña mansión que no
-                        recibe visitas, bailan hoy también el hollín y voces doradas.</p>
+                    <p id="sinopsis">{{libro.descripcion}}</p>
 
-                    <p id="formato"><b>Formato:</b> Rústica con sobrecubierta</p>
-                    <p id="tamaño"><b>Tamaño:</b> 13 x 18 cms</p>
-                    <p id="pag"><b>Páginas:</b> 160</p>
-                    <p id="isbn"><b>ISBN:</b> 978-84-18222-14-6</p>
-                    <p id="fecha"><b>Fecha de venta:</b> 01/01/2024</p>
+                    <p id="editorial"><b>Editorial: </b>{{libro.editorial.nombre}}</p>
+                    <p id="tamaño"><b>Tamaño: </b>{{libro.tamanyo}}</p>
+                    <p id="pag"><b>Páginas: </b>{{libro.paginas}}</p>
+                    <p id="isbn"><b>ISBN: </b>{{libro.isbn}}</p>
+                    <p id="fecha"><b>Fecha de venta: </b>{{libro.fecha_venta}}</p>
 
-                    <button class="btn" id="compra">Ver en Editorial</button>
+                    <button class="btn" id="compra" disabled>Ver en Editorial</button>
                 </div>
                 <div class="col-1"></div>
             </div>

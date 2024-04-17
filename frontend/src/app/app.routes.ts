@@ -30,7 +30,7 @@ export const routes: Routes = [
             { path: 'catalogo', component: CatalogoComponent },
             { path: 'sobre-nosotros', component: SobreNosotrosComponent },
             { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
-            { path: 'detalle', component: DetalleComponent }
+            { path: 'detalle/:isbn', component: DetalleComponent }
         ]
     },
     {

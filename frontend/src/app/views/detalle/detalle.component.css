@@ -21,7 +21,7 @@
 
 img {
     margin-bottom: 100px;
-    width: 400px;
+    width: 450px;
     height: 520px;
     border-radius: 2px;
 }
@@ -52,7 +52,7 @@ img {
   margin-bottom: 20px;
 }
 
-#formato,
+#editorial,
 #tamaño,
 #pag,
 #isbn,
@@ -68,12 +68,8 @@ img {
     width: 150px;
     color:#FDFDFD;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
+    margin-top: 40px;
   }
-
-#compra:hover {
-    background-color: #48755BE6;
-}
 
 
   .info {
