@@ -17,6 +17,7 @@ import { AddAutorComponent } from './views/add-autor/add-autor.component';
 import { UpdateAutorComponent } from './views/update-autor/update-autor.component';
 import { AddEditorialComponent } from './views/add-editorial/add-editorial.component';
 import { UpdateEditorialComponent } from './views/update-editorial/update-editorial.component';
+import { ValidacionComponent } from './views/validacion/validacion.component';
 
 export const routes: Routes = [
 
@@ -31,6 +32,14 @@ export const routes: Routes = [
             { path: 'sobre-nosotros', component: SobreNosotrosComponent },
             { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
             { path: 'detalle/:isbn', component: DetalleComponent }
+            
+        ]
+    },
+    {
+        path: '',
+        component: PanelLayoutComponent,
+        children: [
+            { path: 'validacion', component: ValidacionComponent }
         ]
     },
     {
