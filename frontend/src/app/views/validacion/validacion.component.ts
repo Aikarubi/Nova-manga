@@ -9,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class ValidacionComponent {
 
+  codigo: number = 12345;
+
+
+  constructor(private router: Router) {}
+
+
+  onSubmit() {
+    
+  }
 }
