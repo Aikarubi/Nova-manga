@@ -45,7 +45,7 @@
   margin-bottom: 30px;
 }
 
-.destacados-div a {
+.destacados-div a, #slogan {
   text-decoration: none;
   color: #1A191B;
   text-transform: uppercase;
@@ -127,3 +127,7 @@
   background-color: #453B39E6;
 }
 
+#slogan {
+  padding-bottom: 30px;
+  font-size: 30px;
+}
