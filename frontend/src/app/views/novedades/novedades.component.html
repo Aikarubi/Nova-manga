@@ -7,49 +7,32 @@
         <div class="col-3"></div>
         <div class="col-2"></div>
         <div class="col-7">
-            <h2 id="mes-novedad"> MARZO 2024 </h2>
+            <h2 id="mes-novedad"> {{ fechaActual }} </h2>
         </div>
         <div class="col-3"></div>
         <div class="col-2"></div>
         <div class="col-8">
             <div class="card-check d-flex">
+
+                @for (libro of novedades; track libro){
                 <div class="card mr-3 flex-fill card-novedad">
-                    <img class="card-img-top" src="../../../assets/mangas/frieren/9.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="{{libro.portada}}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Frieren</h5>
+                        <h5 class="card-title">{{ libro.nombre }}</h5>
                     </div>
                     <div class="card-footer">
-                        <p class="text-muted">9.00€</p>
+                        <p class="text-muted">{{ libro.precio }}</p>
                     </div>
                 </div>
-        
-                <div class="card mr-3 flex-fill card-novedad">
-                    <img class="card-img-top" src="../../../assets/mangas/dice-club/3.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">After Shcool Dice Club</h5>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-muted">15.95€</p>
-                    </div>
-                </div>
-        
-                <div class="card flex-fill card-novedad">
-                    <img class="card-img-top" src="../../../assets/mangas/oshi-no-ko/13.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Oshi No Ko</h5>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-muted">9.00€</p>
-                    </div>
-                </div>
-            </div>
+            }
+                
         </div>
         
         <div class="col-2"></div>
     </div>
 
     <div class="row">
-        <div class="col-3"></div>
+        <div class="col-4"></div>
         <div class="col-6">
             <h1> Recomendaciones </h1>
         </div>

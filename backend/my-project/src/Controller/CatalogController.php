@@ -5,10 +5,11 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Libros; // Asegúrate de importar la entidad Libro
-use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Libros; 
+use DateTime;
 
 class CatalogController extends AbstractController
 {
@@ -49,4 +50,71 @@ class CatalogController extends AbstractController
         // Devolver la respuesta JSON con los resultados de la búsqueda
         return new JsonResponse($resultados);
     }
+
+    #[Route('/novedades', name: 'novedades', methods: ['GET'])]
+    /*public function index(EntityManagerInterface $entityManager): JsonResponse
+    {
+        // Obtener el mes actual
+        $mesActual = (new DateTime())->format('m');
+
+        // Obtener las novedades más recientes
+        $repository = $entityManager->getRepository(Libros::class);
+        $novedades = $repository->createQueryBuilder('l')
+            ->where('SUBSTRING(l.fechaVenta, 6, 2) = :mes')
+            ->setParameter('mes', $mesActual)
+            ->orderBy('l.fechaVenta', 'DESC')
+            ->setMaxResults(3) // Obtener solo las 3 novedades más recientes
+            ->getQuery()
+            ->getResult();
+
+        // Transformar los resultados en un array asociativo
+        $novedadesArray = [];
+        foreach ($novedades as $libro) {
+            $novedadesArray[] = [
+                'nombre' => $libro->getNombre(),
+                'precio' => $libro->getPrecio(),
+                'portada' => $libro->getPortada(),
+                // Agrega más campos según sea necesario
+            ];
+        }
+
+        // Devolver los datos como respuesta JSON
+        return new JsonResponse([
+            'mesActual' => $mesActual,
+            'novedades' => $novedadesArray,
+        ]);
+    }*/
+    public function index(EntityManagerInterface $entityManager): JsonResponse
+    {
+        // Obtener la fecha actual
+        $fechaActual = new DateTime();
+
+        // Obtener las novedades más recientes hasta la fecha de hoy
+        $repository = $entityManager->getRepository(Libros::class);
+        $novedades = $repository->createQueryBuilder('l')
+            ->where('l.fechaVenta <= :fechaActual')
+            ->setParameter('fechaActual', $fechaActual)
+            ->orderBy('l.fechaVenta', 'DESC')
+            ->setMaxResults(3) // Obtener solo los 3 libros más recientes
+            ->getQuery()
+            ->getResult();
+
+        // Transformar los resultados en un array asociativo
+        $novedadesArray = [];
+        foreach ($novedades as $libro) {
+            $novedadesArray[] = [
+                'nombre' => $libro->getNombre(),
+                'precio' => $libro->getPrecio(),
+                'portada' => $libro->getPortada(),
+                // Agrega más campos según sea necesario
+            ];
+        }
+
+        // Devolver los datos como respuesta JSON
+        return new JsonResponse([
+            'fechaActual' => $fechaActual->format('Y-m-d'), // Formatear la fecha actual
+            'novedades' => $novedadesArray,
+        ]);
+    }
+
 }

@@ -101,4 +101,9 @@ export class BibliotecaService {
       return this.http.get<any>(urlBuscarLibros);
   }
 
+  //NOVEDADES
+  public getNovedades(): Observable<any> {
+    const urlNovedades: string = `${this.urlAPI}novedades`;
+    return this.http.get<any>(urlNovedades);
+  }
 }
