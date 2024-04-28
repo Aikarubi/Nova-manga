@@ -13,7 +13,8 @@
         <div class="col-md-12">
           <!-- app.component.html -->
 
-          <input class="busqueda" type="text" [(ngModel)]="terminoBusqueda" placeholder="Buscar libros..." (input)="buscarLibros()">
+          <input class="busqueda" type="text" [(ngModel)]="terminoBusqueda" placeholder="Buscar libros..."
+            (input)="buscarLibros()">
 
         </div>
         <div class="col-4">
@@ -49,7 +50,7 @@
       <div class="row" id="librosContainer">
         <!-- Las tarjetas de libros se cargarán aquí -->
 
-        @for (libro of libros; track libro; let i = $index) {
+        @for (libro of getLibrosPaginados(); track libro; let i = $index) {
         <div class="col-4">
           <div class="card mb-3">
             <img class="card-img-top" src="{{libro.portada}}" (click)="verDetalle(libro.isbn)" alt="Card image cap">
@@ -63,6 +64,19 @@
         </div>
         }
 
+      </div>
+      <div class="row">
+        <div class="col-5"></div>
+        <div class="col-6 pagination">
+          @for (numeroPagina of paginas; track numeroPagina) {
+          <button [class.active]="numeroPagina === paginaActual" (click)="cambiarPagina(numeroPagina)">
+            {{ numeroPagina }}
+          </button>
+
+          }
+
+
+        </div>
       </div>
     </div>
   </div>
