@@ -82,3 +82,21 @@ img {
 .form-select:focus {
   background-color: #e9ecef;
 }
+
+/* Estilos para la barra de búsqueda */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+    border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #a7adb4;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+

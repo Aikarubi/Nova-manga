@@ -95,4 +95,10 @@ export class BibliotecaService {
       return this.http.delete(urlEliminarEditorial);
     }
 
+    //SEARCH
+    public buscarLibros(termino: string): Observable<any> {
+      const urlBuscarLibros: string = `${this.urlAPI}catalog?query=${termino}`;
+      return this.http.get<any>(urlBuscarLibros);
+  }
+
 }

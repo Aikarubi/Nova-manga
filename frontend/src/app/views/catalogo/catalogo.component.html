@@ -1,62 +1,69 @@
 <div class="container">
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <h1> CATÁLOGO </h1>
-      </div>
-      <div class="col-3"></div>
-      <div class="col-12 mt-3">
-        <h5>Filtrar:</h5>
-      </div>
-      <div class="col-12 mt-3">
-        <div class="row">
-          <div class="col-4">
-            <label for="autores" class="form-label">Autor:</label>
-            <select id="autores" class="form-select">
-              <option value="todos">Todos</option>
-              <option value="autor1">Inio Asano</option>
-              <option value="autor2">Aka Akasaka</option>
-              <option value="autor3">Junji Ito</option>
-            </select>
-          </div>
-          <div class="col-4">
-            <label for="editoriales" class="form-label">Editorial:</label>
-            <select id="editoriales" class="form-select">
-              <option value="todas">Todas</option>
-              <option value="editorial1">Distrito Manga</option>
-              <option value="editorial2">Planeta</option>
-              <option value="editorial3">Norma Comics</option>
-            </select>
-          </div>
-          <div class="col-4">
-            <div class="form-group">
-                <label for="fecha" class="form-label">Fecha de Venta:</label>
-                <select id="ordenFecha" class="form-select">
-                  <option value="reciente">Más Reciente - Más Antiguo</option>
-                  <option value="antiguo">Más Antiguo - Más Reciente</option>
-                </select>
-            </div>
-          </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <h1> CATÁLOGO </h1>
+    </div>
+    <div class="col-3"></div>
+    <div class="col-12 mt-3">
+      <h5>Filtrar:</h5>
+    </div>
+    <div class="col-12 mt-3">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- app.component.html -->
+
+          <input class="busqueda" type="text" [(ngModel)]="terminoBusqueda" placeholder="Buscar libros..." (input)="buscarLibros()">
+
         </div>
-      </div>
-      <div class="col-12 mt-4">
-        <div class="row" id="librosContainer">
-          <!-- Las tarjetas de libros se cargarán aquí -->
-          @for (libro of libros; track libro; let i = $index) {
-          <div class="col-4">
-            <div class="card mb-3">
-              <img class="card-img-top" src="{{libro.portada}}" (click)="verDetalle(libro.isbn)" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{libro.nombre}}</h5>
-              </div>
-              <div class="card-footer">
-                <p class="text-muted">{{libro.precio}}€</p>
-              </div>
-            </div>
+        <div class="col-4">
+          <label for="autores" class="form-label">Autor:</label>
+          <select id="autores" class="form-select">
+            <option value="todos">Todos</option>
+            <option value="autor1">Inio Asano</option>
+            <option value="autor2">Aka Akasaka</option>
+            <option value="autor3">Junji Ito</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <label for="editoriales" class="form-label">Editorial:</label>
+          <select id="editoriales" class="form-select">
+            <option value="todas">Todas</option>
+            <option value="editorial1">Distrito Manga</option>
+            <option value="editorial2">Planeta</option>
+            <option value="editorial3">Norma Comics</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="fecha" class="form-label">Fecha de Venta:</label>
+            <select id="ordenFecha" class="form-select">
+              <option value="reciente">Más Reciente - Más Antiguo</option>
+              <option value="antiguo">Más Antiguo - Más Reciente</option>
+            </select>
           </div>
-        }
         </div>
       </div>
     </div>
+    <div class="col-12 mt-4">
+      <div class="row" id="librosContainer">
+        <!-- Las tarjetas de libros se cargarán aquí -->
+
+        @for (libro of libros; track libro; let i = $index) {
+        <div class="col-4">
+          <div class="card mb-3">
+            <img class="card-img-top" src="{{libro.portada}}" (click)="verDetalle(libro.isbn)" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{libro.nombre}}</h5>
+            </div>
+            <div class="card-footer">
+              <p class="text-muted">{{libro.precio}}€</p>
+            </div>
+          </div>
+        </div>
+        }
+
+      </div>
+    </div>
   </div>
-  
+</div>
