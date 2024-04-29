@@ -52,38 +52,6 @@ class CatalogController extends AbstractController
     }
 
     #[Route('/novedades', name: 'novedades', methods: ['GET'])]
-    /*public function index(EntityManagerInterface $entityManager): JsonResponse
-    {
-        // Obtener el mes actual
-        $mesActual = (new DateTime())->format('m');
-
-        // Obtener las novedades más recientes
-        $repository = $entityManager->getRepository(Libros::class);
-        $novedades = $repository->createQueryBuilder('l')
-            ->where('SUBSTRING(l.fechaVenta, 6, 2) = :mes')
-            ->setParameter('mes', $mesActual)
-            ->orderBy('l.fechaVenta', 'DESC')
-            ->setMaxResults(3) // Obtener solo las 3 novedades más recientes
-            ->getQuery()
-            ->getResult();
-
-        // Transformar los resultados en un array asociativo
-        $novedadesArray = [];
-        foreach ($novedades as $libro) {
-            $novedadesArray[] = [
-                'nombre' => $libro->getNombre(),
-                'precio' => $libro->getPrecio(),
-                'portada' => $libro->getPortada(),
-                // Agrega más campos según sea necesario
-            ];
-        }
-
-        // Devolver los datos como respuesta JSON
-        return new JsonResponse([
-            'mesActual' => $mesActual,
-            'novedades' => $novedadesArray,
-        ]);
-    }*/
     public function index(EntityManagerInterface $entityManager): JsonResponse
     {
         // Obtener la fecha actual
@@ -106,6 +74,7 @@ class CatalogController extends AbstractController
                 'nombre' => $libro->getNombre(),
                 'precio' => $libro->getPrecio(),
                 'portada' => $libro->getPortada(),
+                'isbn' => $libro->getIsbn(),
                 // Agrega más campos según sea necesario
             ];
         }

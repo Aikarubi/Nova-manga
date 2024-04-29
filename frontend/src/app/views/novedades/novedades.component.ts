@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { BibliotecaService } from '../../services/biblioteca/biblioteca.service';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-novedades',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './novedades.component.html',
   styleUrl: './novedades.component.css'
 })
@@ -13,7 +14,7 @@ export class NovedadesComponent {
   public novedades: any[] = [];
   public fechaActual: string = '';
 
-  constructor(private bibliotecaService: BibliotecaService) { }
+  constructor(private bibliotecaService: BibliotecaService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerNovedades();
@@ -43,5 +44,9 @@ export class NovedadesComponent {
     const añoActual = fecha.getFullYear(); // Obtener el año actual
 
     this.fechaActual = `${meses[mesActual]} ${añoActual}`;
+  }
+
+  public verDetalle(isbn: string): void {
+    this.router.navigate(['/detalle', isbn]);
   }
 }
