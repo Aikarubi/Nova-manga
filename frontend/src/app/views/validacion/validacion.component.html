@@ -1,8 +1,12 @@
 <main class="container-fluid">
-    <form>
+    <form (submit)="verificarAcceso()">
     <h2>Introduce el código de acceso</h2>
-    <label for="codigo">Código de acceso:</label>
-    <input type="text" id="codigo" name="codigo">
+    <label for="clave">Código de acceso:</label>
+    <input type="text" id="clave" name="clave" [(ngModel)]="clave">
+    @if (error) {
+        <p>{{ error }}</p>
+    }
     <button type="submit">Acceder</button>
+    
     </form>
 </main>

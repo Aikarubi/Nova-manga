@@ -44,3 +44,8 @@
     background-color: #1a191bc6; /* Cambio de color al pasar el ratón */
   }
   
+  p {
+    margin-top: -10px;
+    color: red;
+    font-size: 12px;
+  }

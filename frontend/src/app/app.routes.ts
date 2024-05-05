@@ -18,6 +18,7 @@ import { UpdateAutorComponent } from './views/update-autor/update-autor.componen
 import { AddEditorialComponent } from './views/add-editorial/add-editorial.component';
 import { UpdateEditorialComponent } from './views/update-editorial/update-editorial.component';
 import { ValidacionComponent } from './views/validacion/validacion.component';
+//import { accesoGuard } from './auth/acceso.guard';
 
 export const routes: Routes = [
 
@@ -45,6 +46,7 @@ export const routes: Routes = [
     {
         path: '',
         component: PanelLayoutComponent,
+        //canActivate: [accesoGuard],
         children: [
             { path: 'panel', component: PanelComponent },
             { path: 'panel-libros', component: PanelLibrosComponent },

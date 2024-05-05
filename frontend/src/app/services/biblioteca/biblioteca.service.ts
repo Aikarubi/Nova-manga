@@ -106,4 +106,10 @@ export class BibliotecaService {
     const urlNovedades: string = `${this.urlAPI}novedades`;
     return this.http.get<any>(urlNovedades);
   }
+
+
+  //VERIFICAR CODIGO
+  verificarAcceso(clave: string): Observable<any> {
+    return this.http.post<any>(`${this.urlAPI}acceso`, { clave });
+  }
 }
