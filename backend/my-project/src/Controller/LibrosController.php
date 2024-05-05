@@ -16,12 +16,14 @@ class LibrosController extends AbstractController
     #[Route('/libros', name: 'app_libros', methods: ['GET'])]
     public function listadoLibros(ManagerRegistry $doctrine): JsonResponse
     {
+        // Obtener todos los libros de la base de datos
         $libros = $doctrine
             ->getRepository(Libros::class)
             ->findAll();
 
         $data = [];
 
+        // Construir la respuesta JSON con los datos de los libros
         foreach ($libros as $libro) {
 
             $autor = $libro->getAutor();
@@ -39,12 +41,10 @@ class LibrosController extends AbstractController
                 'autor' => $autor ? [
                     'id' => $autor->getId(),
                     'nombre' => $autor->getNombre(),
-                    // Agrega otras propiedades del autor que necesites
                 ] : null,
                 'editorial' => $editorial ? [
                     'id' => $editorial->getId(),
                     'nombre' => $editorial->getNombre(),
-                    // Agrega otras propiedades de la editorial que necesites
                 ] : null,
             ];
         }
@@ -56,6 +56,7 @@ class LibrosController extends AbstractController
     public function unLibro(ManagerRegistry $doctrine, string $isbn): JsonResponse
     {
 
+        // Buscar un libro por su ISBN en la base de datos
         $libro = $doctrine->getRepository(Libros::class)->find($isbn);
 
         if (!$libro) {
@@ -79,12 +80,10 @@ class LibrosController extends AbstractController
             'autor' => $libro->getAutor() ? [
                 'id' => $libro->getAutor()->getId(),
                 'nombre' => $libro->getAutor()->getNombre(),
-                // Agrega otras propiedades del autor que necesites
             ] : null,
             'editorial' => $libro->getEditorial() ? [
                 'id' => $libro->getEditorial()->getId(),
                 'nombre' => $libro->getEditorial()->getNombre(),
-                // Agrega otras propiedades de la editorial que necesites
             ] : null,
         ];
 
@@ -105,6 +104,7 @@ class LibrosController extends AbstractController
         $autor = $entityManager->getRepository(Autor::class)->find($data['autor_id']);
         $editorial = $entityManager->getRepository(Editorial::class)->find($data['editorial_id']);
 
+        // Crear un nuevo objeto Libros
         $libro = new Libros();
         $libro->setIsbn($data['isbn']);
         $libro->setNombre($data['nombre']);
@@ -120,6 +120,7 @@ class LibrosController extends AbstractController
         $entityManager->persist($libro);
         $entityManager->flush();
 
+        // Devolver la respuesta con el ISBN del libro creado
         $responseData = [
             'isbn' => $libro->getIsbn(),
             'nombre' => $libro->getNombre(),

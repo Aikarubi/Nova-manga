@@ -14,12 +14,14 @@ class EditorialController extends AbstractController
     #[Route('/editorial', name: 'app_editorial', methods: ['GET'])]
     public function listadoeditorial(ManagerRegistry $doctrine): JsonResponse
     {
+        // Obtener todos los editoriales de la base de datos
         $editoriales = $doctrine
             ->getRepository(Editorial::class)
             ->findAll();
 
         $data = [];
 
+        // Construir la respuesta JSON con los datos de los editoriales
         foreach ($editoriales as $editorial) {
             $data[] = [
                 'id' => $editorial->getId(),
@@ -33,8 +35,10 @@ class EditorialController extends AbstractController
     #[Route('/editoriales/{id}', name: 'app_getEditorialById', methods: ['GET'])]
     public function getEditorialById(ManagerRegistry $doctrine, int $id): JsonResponse
     {
+        // Buscar un editorial por su ID en la base de datos
         $editorial = $doctrine->getRepository(Editorial::class)->find($id);
 
+        // Verificar si se encontró el editorial
         if (!$editorial) {
             return $this->json('Editorial not found for ID ' . $id, 404);
         }
@@ -42,7 +46,6 @@ class EditorialController extends AbstractController
         $data = [
             'id' => $editorial->getId(),
             'nombre' => $editorial->getNombre(),
-            // Agrega otras propiedades de la editorial que necesites
         ];
 
         return $this->json($data);
@@ -54,6 +57,7 @@ class EditorialController extends AbstractController
         $entityManager = $doctrine->getManager();
         $data = json_decode($request->getContent(), true);
 
+        // Crear un nuevo objeto Editorial
         $editorial = new Editorial();
         $editorial->setNombre($data['nombre']);
 
@@ -63,7 +67,6 @@ class EditorialController extends AbstractController
         $responseData = [
             'id' => $editorial->getId(),
             'nombre' => $editorial->getNombre(),
-            // Agrega otras propiedades de la editorial que necesites
         ];
 
         return new JsonResponse($responseData);
@@ -75,6 +78,7 @@ class EditorialController extends AbstractController
         $entityManager = $doctrine->getManager();
         $editorial = $entityManager->getRepository(Editorial::class)->find($id);
 
+        // Verificar si se encontró el editorial
         if (!$editorial) {
             return $this->json('Editorial not found for ID ' . $id, 404);
         }
@@ -83,12 +87,12 @@ class EditorialController extends AbstractController
 
         $editorial->setNombre($data['nombre'] ?? $editorial->getNombre());
 
+        // Actualizar el editorial
         $entityManager->flush();
 
         $responseData = [
             'id' => $editorial->getId(),
             'nombre' => $editorial->getNombre(),
-            // Agrega otras propiedades de la editorial que necesites
         ];
 
         return $this->json($responseData);
@@ -104,6 +108,7 @@ class EditorialController extends AbstractController
             return $this->json('Editorial not found for ID ' . $id, 404);
         }
 
+        // Eliminar el editorial
         $entityManager->remove($editorial);
         $entityManager->flush();
 

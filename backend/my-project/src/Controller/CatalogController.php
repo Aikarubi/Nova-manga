@@ -43,7 +43,6 @@ class CatalogController extends AbstractController
                 'nombre' => $libro->getNombre(),
                 'precio' => $libro->getPrecio(),
                 'portada' => $libro->getPortada(),
-                // Agregar más propiedades según sea necesario
             ];
         }
 
@@ -63,7 +62,7 @@ class CatalogController extends AbstractController
             ->where('l.fechaVenta <= :fechaActual')
             ->setParameter('fechaActual', $fechaActual)
             ->orderBy('l.fechaVenta', 'DESC')
-            ->setMaxResults(3) // Obtener solo los 3 libros más recientes
+            ->setMaxResults(3) 
             ->getQuery()
             ->getResult();
 
@@ -75,13 +74,11 @@ class CatalogController extends AbstractController
                 'precio' => $libro->getPrecio(),
                 'portada' => $libro->getPortada(),
                 'isbn' => $libro->getIsbn(),
-                // Agrega más campos según sea necesario
             ];
         }
 
-        // Devolver los datos como respuesta JSON
         return new JsonResponse([
-            'fechaActual' => $fechaActual->format('Y-m-d'), // Formatear la fecha actual
+            'fechaActual' => $fechaActual->format('Y-m-d'), 
             'novedades' => $novedadesArray,
         ]);
     }
