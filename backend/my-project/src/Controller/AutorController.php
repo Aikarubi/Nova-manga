@@ -14,6 +14,7 @@ class AutorController extends AbstractController
     #[Route('/autor', name: 'app_autor', methods: ['GET'])]
     public function listadoAutor(ManagerRegistry $doctrine): JsonResponse
     {
+        // Obtener todos los autores de la base de datos
         $autores = $doctrine
             ->getRepository(Autor::class)
             ->findAll();
@@ -33,8 +34,10 @@ class AutorController extends AbstractController
     #[Route('/autores/{id}', name: 'app_unAutor', methods: ['GET'])]
     public function unAutor(ManagerRegistry $doctrine, int $id): JsonResponse
     {
+        // Buscar un autor por su ID en la base de datos
         $autor = $doctrine->getRepository(Autor::class)->find($id);
 
+        // Verificar si se encontró el autor
         if (!$autor) {
             return $this->json('Autor no encontrado para el ID ' . $id, 404);
         }
@@ -42,7 +45,6 @@ class AutorController extends AbstractController
         $data = [
             'id' => $autor->getId(),
             'nombre' => $autor->getNombre(),
-            // Puedes agregar otras propiedades del autor aquí si las necesitas
         ];
 
         return $this->json($data);
@@ -54,16 +56,17 @@ class AutorController extends AbstractController
         $entityManager = $doctrine->getManager();
         $data = json_decode($request->getContent(), true);
 
+        // Crear un nuevo objeto Autor y establecer su nombre
         $autor = new Autor();
         $autor->setNombre($data['nombre']);
 
+        // Persistir el nuevo autor en la base de datos
         $entityManager->persist($autor);
         $entityManager->flush();
 
         $responseData = [
             'id' => $autor->getId(),
             'nombre' => $autor->getNombre(),
-            // Puedes agregar otras propiedades del autor aquí si las necesitas
         ];
 
         return new JsonResponse($responseData);
@@ -75,21 +78,21 @@ class AutorController extends AbstractController
         $entityManager = $doctrine->getManager();
         $autor = $entityManager->getRepository(Autor::class)->find($id);
 
+        // Verificar si se encontró el autor
         if (!$autor) {
             return $this->json('Autor not found for ID ' . $id, 404);
         }
 
         $data = json_decode($request->getContent(), true);
 
+        // Actualizar el nombre del autor si se proporciona en la solicitud
         $autor->setNombre($data['nombre'] ?? $autor->getNombre());
-        // Puedes agregar otras propiedades que desees actualizar aquí
 
         $entityManager->flush();
 
         $responseData = [
             'id' => $autor->getId(),
             'nombre' => $autor->getNombre(),
-            // Agrega otras propiedades actualizadas si es necesario
         ];
 
         return $this->json($responseData);
@@ -105,6 +108,7 @@ class AutorController extends AbstractController
             return $this->json('Autor not found for ID ' . $id, 404);
         }
 
+        // Eliminar el autor de la base de datos
         $entityManager->remove($autor);
         $entityManager->flush();
 

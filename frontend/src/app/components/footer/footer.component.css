@@ -1,34 +1,33 @@
 footer {
     background-color: #1A191B;
-    width: 100%;
-    height: auto;
     color: #fdfdfd;
     font-size: 17px;
-}
-
-.copy {
-    background-color: #28272A;
-    font-size: 14px;
-}
-
-.copy p {
-    text-align: center;
-
+    
 }
 
 .logo img {
-    width: 250px;
+    width: 100%;
+    max-width: 150px;
     height: auto;
 }
 
-.mapa {
-    margin-top: 50px;
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
+.social-icon {
+    margin-right: 10px;
+}
+
+.contacto p {
+    margin-bottom: 20px;
+}
 
 .p-interes ul {
     list-style: none;
-    margin-left: -35px;
+    padding: 0;
 }
 
 .p-interes a {
@@ -37,23 +36,23 @@ footer {
 }
 
 .p-interes a:hover {
-    text-decoration: none;
-    color: #FDFDFDCC;
+    color: #fdfdfd;
 }
 
-.redes a {
-    text-decoration: none;
+.mapa iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    margin: 20px 0px 10px 0px;
 }
 
-.contacto {
-    margin-top: 20px;
+.copy {
+    background-color: #28272A;
+    font-size: 14px;
+    padding: 10px 0;
 }
 
-.social-icon:hover svg {
-    stroke: #FDFDFDCC;
-}
-
-h5 {
-    margin-top: 50px;
-    margin-bottom: 20px;
+.copy p {
+    text-align: center;
+    margin: 0;
 }
