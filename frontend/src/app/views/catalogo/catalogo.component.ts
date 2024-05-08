@@ -14,20 +14,6 @@ import { NgModule } from '@angular/core';
 })
 export class CatalogoComponent implements OnInit {
 
-  /*public libros: Response[] = [];
-  
-  public constructor(public service: BibliotecaService) {}
-  
-  public getResponse(): void {
-    this.service.getResponse().subscribe((response) => {
-    console.log(response);
-  });
-  }
-  
-  public ngOnInit(): void {
-    this.getResponse();
-  }*/
-
   public terminoBusqueda: string = '';
   public libros: Response[] = [];
   public paginaActual: number = 1;
@@ -37,9 +23,11 @@ export class CatalogoComponent implements OnInit {
   constructor(private bibliotecaService: BibliotecaService, private router: Router) { }
 
   ngOnInit(): void {
+    // Al inicializarse el componente, se recuperan los libros
     this.getLibros();
   }
 
+  // Método para obtener todos los libros
   getLibros(): void {
     this.bibliotecaService.getLibros().subscribe(libros => {
       this.libros = libros;
@@ -47,25 +35,31 @@ export class CatalogoComponent implements OnInit {
     });
   }
 
+  // Método para calcular el número de páginas
   calcularPaginas(): void {
     const totalPaginas = Math.ceil(this.libros.length / this.librosPorPagina);
+    // Se crea un array con las páginas disponibles
     this.paginas = Array.from({ length: totalPaginas }, (_, index) => index + 1);
   }
 
+  // Método para cambiar a una página específica
   cambiarPagina(pagina: number): void {
     this.paginaActual = pagina;
   }
 
+  // Método para obtener los libros de la página actual
   getLibrosPaginados(): any[] {
     const indiceInicial = (this.paginaActual - 1) * this.librosPorPagina;
     const indiceFinal = Math.min(indiceInicial + this.librosPorPagina, this.libros.length);
     return this.libros.slice(indiceInicial, indiceFinal);
   }
 
+  // Método para ver el detalle de un libro
   public verDetalle(isbn: string): void {
     this.router.navigate(['/detalle', isbn]);
   }
 
+  // Método para buscar libros por término de búsqueda
   buscarLibros(): void {
     if (this.terminoBusqueda.trim() !== '') {
       this.bibliotecaService.buscarLibros(this.terminoBusqueda).subscribe(

@@ -17,22 +17,7 @@ export class ValidacionComponent {
 
   constructor(private bibliotecaService: BibliotecaService, private router: Router) {}
 
-  /*onSubmit(): void {
-    this.bibliotecaService.verificarAcceso(this.clave).subscribe(accesoValido => {
-      if (accesoValido ) {
-        // Acceso válido, redirigir al panel
-        this.router.navigate(['/panel']);
-        console.log('Acceso válido');
-        console.log(this.clave)
-      } else {
-        // Acceso no válido, redirigir a otra ubicación (por ejemplo, página de inicio de sesión)
-        this.router.navigate(['/validacion']); // Redirigir a una página de inicio de sesión si el acceso es inválido
-        console.log('Acceso no válido');
-        console.log(this.clave)
-      }
-    });
-  }*/
-
+  // Método para verificar el acceso
   verificarAcceso(): void {
     this.bibliotecaService.verificarAcceso(this.clave)
       .subscribe(

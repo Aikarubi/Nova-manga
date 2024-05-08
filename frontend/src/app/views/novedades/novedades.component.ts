@@ -17,10 +17,12 @@ export class NovedadesComponent {
   constructor(private bibliotecaService: BibliotecaService, private router: Router) { }
 
   ngOnInit(): void {
+    // Al inicializarse el componente, se obtienen las novedades y la fecha actual
     this.obtenerNovedades();
     this.obtenerFechaActual();
   }
 
+  // Método para obtener las novedades
   obtenerNovedades(): void {
     this.bibliotecaService.getNovedades()
       .subscribe(
@@ -33,6 +35,7 @@ export class NovedadesComponent {
       );
   }
 
+  // Método para obtener la fecha actual
   obtenerFechaActual(): void {
     const meses: string[] = [
       'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
@@ -40,12 +43,14 @@ export class NovedadesComponent {
     ];
 
     const fecha = new Date();
-    const mesActual = fecha.getMonth(); // Obtener el mes actual como un número (0-11)
-    const añoActual = fecha.getFullYear(); // Obtener el año actual
+    const mesActual = fecha.getMonth();
+    const añoActual = fecha.getFullYear();
 
+    // Construir la cadena de la fecha actual
     this.fechaActual = `${meses[mesActual]} ${añoActual}`;
   }
 
+  // Método para ver el detalle de un libro
   public verDetalle(isbn: string): void {
     this.router.navigate(['/detalle', isbn]);
   }

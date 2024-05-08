@@ -19,9 +19,11 @@ export class PanelEditorialesComponent implements OnInit {
   constructor(private bibliotecaService: BibliotecaService) { }
 
   ngOnInit(): void {
+    // Al inicializarse el componente, se obtienen las editoriales
     this.obtenerEditoriales();
   }
 
+  // Método para obtener las editoriales
   obtenerEditoriales(): void {
     this.bibliotecaService.getEditoriales().subscribe(editoriales => {
       this.editoriales = editoriales;
@@ -29,21 +31,25 @@ export class PanelEditorialesComponent implements OnInit {
     });
   }
 
+  // Método para calcular el número de páginas
   calcularPaginas(): void {
     const totalPaginas = Math.ceil(this.editoriales.length / this.editorialesPorPagina);
     this.paginas = Array.from({ length: totalPaginas }, (_, index) => index + 1);
   }
 
+  // Método para cambiar a una página específica
   cambiarPagina(pagina: number): void {
     this.paginaActual = pagina;
   }
 
+  // Método para obtener las editoriales de la página actual
   getEditorialesPaginadas(): any[] {
     const indiceicial = (this.paginaActual - 1) * this.editorialesPorPagina;
     const indiceFinal = Math.min(indiceicial + this.editorialesPorPagina, this.editoriales.length);
     return this.editoriales.slice(indiceicial, indiceFinal);
   }
 
+  // Método para eliminar una editorial
   public eliminarEditorial(id: number): void {
     if (confirm('¿Estás seguro de que deseas eliminar esta editorial?')) {
       this.bibliotecaService.eliminarEditorial(id).subscribe({

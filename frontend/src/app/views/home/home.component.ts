@@ -14,7 +14,7 @@ export class HomeComponent {
   constructor(private bibliotecaService: BibliotecaService, private router: Router) { }
 
 
-
+  //Llevar al detalle del libro
   public verDetalle(isbn: string): void {
     this.router.navigate(['/detalle', isbn]);
   }

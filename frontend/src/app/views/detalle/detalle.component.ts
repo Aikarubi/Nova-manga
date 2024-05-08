@@ -24,7 +24,7 @@ export class DetalleComponent implements OnInit {
       // Llamar al método del servicio para obtener los detalles del libro
       this.bibliotecaService.obtenerLibro(isbn).subscribe(
         (data) => {
-          this.libro = data; // Almacenar los detalles del libro en la variable libro
+          this.libro = data;
         },
         (error) => {
           console.error('Error al obtener los detalles del libro:', error);

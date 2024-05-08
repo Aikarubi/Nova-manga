@@ -16,10 +16,12 @@ export class AddLibroComponent implements OnInit {
   public libroForm: FormGroup;
 
   constructor(private bibliotecaService: BibliotecaService, private router: Router) { 
+    // Inicialización del formulario libroForm en el constructor del componente
     this.libroForm = new FormGroup({});
   }
 
   ngOnInit(): void {
+    // En el evento OnInit, se crea el formulario con sus campos y validaciones
     this.libroForm = new FormGroup({
       isbn: new FormControl(''),
       nombre: new FormControl(''),
@@ -34,6 +36,7 @@ export class AddLibroComponent implements OnInit {
     })
   }
 
+  // Método invocado al enviar el formulario
   onSubmit() {
     console.log('Datos del formulario:', this.libroForm.value);
     

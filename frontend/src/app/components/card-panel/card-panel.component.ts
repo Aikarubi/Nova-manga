@@ -9,6 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class CardPanelComponent {
 
-  @Input() tarjeta: string = 'Hola';
+  @Input() tarjeta: string = '';
 
 }

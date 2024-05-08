@@ -33,7 +33,7 @@ export const routes: Routes = [
             { path: 'sobre-nosotros', component: SobreNosotrosComponent },
             { path: 'politica-privacidad', component: PoliticaPrivacidadComponent },
             { path: 'detalle/:isbn', component: DetalleComponent }
-            
+
         ]
     },
     {
@@ -53,11 +53,11 @@ export const routes: Routes = [
             { path: 'panel-autores', component: PanelAutoresComponent },
             { path: 'panel-editoriales', component: PanelEditorialesComponent },
             { path: 'add-libro', component: AddLibroComponent },
-            { path: 'update-libro/:isbn', component: UpdateLibroComponent},
-            { path: 'add-autor', component: AddAutorComponent},
-            { path: 'update-autor/:id', component: UpdateAutorComponent},
-            { path: 'add-editorial', component: AddEditorialComponent},
-            { path: 'update-editorial/:id', component: UpdateEditorialComponent}
+            { path: 'update-libro/:isbn', component: UpdateLibroComponent },
+            { path: 'add-autor', component: AddAutorComponent },
+            { path: 'update-autor/:id', component: UpdateAutorComponent },
+            { path: 'add-editorial', component: AddEditorialComponent },
+            { path: 'update-editorial/:id', component: UpdateEditorialComponent }
         ]
     }
 

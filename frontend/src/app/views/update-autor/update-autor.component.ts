@@ -15,23 +15,28 @@ export class UpdateAutorComponent implements OnInit {
   public autorForm: FormGroup;
 
   constructor(private fb: FormBuilder, private bibliotecaService: BibliotecaService, private route: ActivatedRoute, private router: Router) { 
+    //Inicialización del formulario usando FormBuilder
     this.autorForm = this.fb.group({});
    }
 
    ngOnInit(): void {
+    // Configuración del formulario con validadores y valores iniciales
     this.autorForm = this.fb.group({
       id: ['', [Validators.required]],
       nombre: ['', [Validators.required]]
     });
 
+    // Suscripción a cambios en los parámetros de la ruta
     this.route.params.subscribe(params => {
-      const id = params['id']; // Verifica que 'id' se esté extrayendo correctamente
+      // Verifica que 'id' se esté extrayendo correctamente
+      const id = params['id']; 
       console.log('ID del autor:', id);
 
-
+      // Verifica que el 'id' se haya obtenido correctamente
       if (id) {
         this.bibliotecaService.obtenerAutor(id).subscribe(autor => {
           console.log('Datos del autor obtenidas:', autor);
+          // Actualiza los valores del formulario con los datos obtenidos
           this.autorForm.patchValue({
             id: autor.id,
             nombre: autor.nombre
@@ -41,7 +46,9 @@ export class UpdateAutorComponent implements OnInit {
     })
    }
 
+   // Método para enviar el formulario al actualizar el autor
    onSubmit() {
+    // Verifica si el formulario es válido
      if (this.autorForm.valid) {
        this.bibliotecaService.actualizarAutor(this.autorForm.value.id, this.autorForm.value).subscribe({
          next: (response) => {

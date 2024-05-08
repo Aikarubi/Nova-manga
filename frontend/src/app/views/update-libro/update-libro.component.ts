@@ -21,9 +21,11 @@ export class UpdateLibroComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) { 
+    //icialización del formulario usando FormBuilder
     this.libroForm = this.fb.group({});
    }
 
+   // Método para enviar el formulario al actualizar el libro
    ngOnInit(): void {
     this.libroForm = this.fb.group({
       isbn: ['', [Validators.required]],
@@ -38,10 +40,13 @@ export class UpdateLibroComponent implements OnInit {
       autor_id: ['']
     });
   
+    // Suscripción a cambios en los parámetros de la ruta
     this.route.params.subscribe(params => {
-      const isbn = params['isbn']; // Verifica que 'isbn' se esté extrayendo correctamente
+      // Verifica que 'isbn' se esté extrayendo correctamente
+      const isbn = params['isbn'];
       console.log('ISBN del libro:', isbn);
   
+      // Verifica que el 'isbn' se haya obtenido correctamente
       if (isbn) {
         this.bibliotecaService.obtenerLibro(isbn).subscribe(libro => {
           console.log('Datos del libro obtenidos:', libro);
@@ -64,15 +69,14 @@ export class UpdateLibroComponent implements OnInit {
     });
   }
   
-  
-
+  // Método para enviar el formulario al actualizar el libro
   onSubmit(): void {
     if (this.libroForm.valid) {
       console.log('Datos del formulario:', this.libroForm.value);
       this.bibliotecaService.actualizarLibro(this.libroForm.value.isbn, this.libroForm.value).subscribe({
         next: (response) => {
           console.log('Libro actualizado', response);
-          this.router.navigate(['/panel-libros']); // Navega a la ruta '/panel-libros' después de actualizar el libro
+          this.router.navigate(['/panel-libros']);
         },
         error: (error) => {
           console.error('Error al actualizar el libro', error);
