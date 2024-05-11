@@ -45,6 +45,17 @@ form {
     height: 50px;   
 }
 
+.back {
+    border-radius: 10px;
+    padding: 10px 0;
+    font-size: 1rem;
+    margin-top: 30px;
+    transition: background-color 0.3s ease-in-out;
+    width: 200px;
+    height: 50px;  
+    margin-left: 20px;
+}
+
 .btn-add:hover {
     background-color: #23272b;
 }

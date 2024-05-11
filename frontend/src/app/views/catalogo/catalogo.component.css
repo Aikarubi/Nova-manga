@@ -122,3 +122,7 @@ input[type="text"]:focus {
 .pagination .active {
   background-color: #28272a;
 }
+
+.busqueda {
+  margin-bottom: 30px;
+}

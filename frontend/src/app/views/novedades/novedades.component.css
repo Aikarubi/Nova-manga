@@ -67,3 +67,23 @@ h1 {
 h5 {
     font-weight: bold;
 }
+
+@media (max-width: 1600px) {
+    .card-check img {
+        width: 310px;
+        height: 460px;
+    }
+
+    .col3-novedades {
+        margin-left: 900px;
+    }
+
+    .col-titulo-6 {
+        margin-left: -130px;
+    }
+
+    .changepx {
+        max-width: 1533px;
+    }
+}
+

@@ -16,7 +16,8 @@
 
                 @for (libro of novedades; track libro){
                 <div class="card mr-3 flex-fill card-novedad">
-                    <img class="card-img-top" src="{{libro.portada}}" (click)="verDetalle(libro.isbn)" alt="Card image cap">
+                    <img class="card-img-top" src="{{libro.portada}}" (click)="verDetalle(libro.isbn)"
+                        alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ libro.nombre }}</h5>
                     </div>
@@ -24,56 +25,68 @@
                         <p class="text-muted">{{ libro.precio }}</p>
                     </div>
                 </div>
-            }
-                
-        </div>
-        
-        <div class="col-2"></div>
-    </div>
+                }
 
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-6">
-            <h1> Recomendaciones </h1>
+            </div>
+
+            <div class="col-2"></div>
         </div>
-        <div class="col-3"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-3 amd" style="height: 600px;" [routerLink]="['/detalle', '978-84-19290-09-0']">
-                        <img class="card-img-top" src="../../../assets/img/mansion-decagonal.png"  alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Los Asesinatos de la Mansión Decagonal</h5>
-                            <p class="card-text">¡Prepárate para un misterio escalofriante en la isla Tsunojima! Cuando siete estudiantes se aventuran para resolver un brutal asesinato, descubren que no están solos... </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-12 mb-3">
-                            <div class="card bb" style="height: 200px;" [routerLink]="['/detalle', '978-8-419-29052-6']">
-                                <img  class="card-img-top" src="../../../assets/img/bestiario-bruja.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">El bestiario de la bruja</h5>
-                                    <p class="card-text">¡Aysha puede obrar milagros con su sangre y pintura, pero ten cuidado! Los deseos codiciosos convierten sus creaciones en criaturas espeluznantes.</p>
-                                </div>
+
+        <div class="row changepx">
+            <div class="col-4"></div>
+            <div class="col-6 col-titulo-6">
+                <h1> Recomendaciones </h1>
+            </div>
+            <div class="col-2"></div>
+            <div class="col col3-novedades"></div>
+            <div class="container">
+                <div class="row changepx">
+                    <div class="col-md-4">
+                        <div class="card mb-3 amd" style="height: 600px;"
+                            [routerLink]="['/detalle', '978-84-19290-09-0']">
+                            <img class="card-img-top" src="../../../assets/img/mansion-decagonal.png"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Los Asesinatos de la Mansión Decagonal</h5>
+                                <p class="card-text">¡Prepárate para un misterio escalofriante en la isla Tsunojima!
+                                    Cuando siete estudiantes se aventuran para resolver un brutal asesinato, descubren
+                                    que no están solos... </p>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card sv" style="height: 200px;" [routerLink]="['/detalle', '978-84-943540-14']">
-                                <img  class="card-img-top" src="../../../assets/img/koe-no-katachi.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">A Silent Voice</h5>
-                                    <p class="card-text">"Desearía no habernos conocido nunca. Desearía poder encontrarnos de nuevo."</p>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <div class="card bb" style="height: 200px;"
+                                    [routerLink]="['/detalle', '978-8-419-29052-6']">
+                                    <img class="card-img-top" src="../../../assets/img/bestiario-bruja.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">El bestiario de la bruja</h5>
+                                        <p class="card-text">¡Aysha puede obrar milagros con su sangre y pintura, pero
+                                            ten cuidado! Los deseos codiciosos convierten sus creaciones en criaturas
+                                            espeluznantes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card sv" style="height: 200px;"
+                                    [routerLink]="['/detalle', '978-84-943540-14']">
+                                    <img class="card-img-top" src="../../../assets/img/koe-no-katachi.jpg"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">A Silent Voice</h5>
+                                        <p class="card-text">"Desearía no habernos conocido nunca. Desearía poder
+                                            encontrarnos de nuevo."</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>

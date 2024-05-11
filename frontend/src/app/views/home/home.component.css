@@ -131,3 +131,10 @@
   padding-bottom: 30px;
   font-size: 30px;
 }
+
+@media (max-width: 1600px) {
+  #gBless-card {
+    width: 744px;
+    height: 450px;
+  }
+}
