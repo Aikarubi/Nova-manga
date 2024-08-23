@@ -10,10 +10,10 @@
 
 ## **🖼️ Imágenes del Proyecto**
 Index
-![App Screenshot](/JS%20PROYECTOS/DOM/input-color-rgb/imagenes/DOM4.png)
+![App Screenshot](/Documentation/)
 
 Recomendaciones:
-![App Screenshot](/JS%20PROYECTOS/DOM/input-color-rgb/imagenes/DOM4.png)
+![App Screenshot](/Documentation/screenshot/reco.png)
 
 Catálogo:
 ![App Screenshot](/JS%20PROYECTOS/DOM/input-color-rgb/imagenes/DOM4.png)
