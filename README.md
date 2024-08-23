@@ -1,6 +1,6 @@
 # **📚 Nova-Manga**
 
-**Nova-Manga** es un proyecto de Trabajo de Fin de Grado (TFG) que consiste en una aplicación web dedicada a la gestión y recomendación de manga. La aplicación cuenta con una base de datos interna que permite gestionar libros, autores y editoriales de manera eficiente. 
+**Nova-Manga** es un proyecto de Proyecto de Final de Ciclo (PFC) que consiste en una aplicación web dedicada a la gestión y recomendación de manga. La aplicación cuenta con una base de datos interna que permite gestionar libros, autores y editoriales de manera eficiente. 
 
 ## **✨ Características Principales**
 
