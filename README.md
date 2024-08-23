@@ -43,30 +43,34 @@ Este proyecto no solo ofrece una plataforma para la gestión de mangas, sino que
 
 1. Clona el repositorio:
    
-bash
+```bash
    git clone https://github.com/Aikarubi/Nova-manga.git
+```
 
 2. Levanta los servicios con Docker:
-bash
+```bash
    docker-compose up -d
+```
 
 3. Configura la base de datos:
 
-bash
+```bash
    php bin/console doctrine:database:create
    php bin/console doctrine:migrations:migrate
    php bin/console doctrine:fixtures:load
+```
 
 4. Instala las dependencias del frontend (Angular):
 
-bash
+```bash
    cd frontend
    npm install
    ng serve
+```
 
 5. Accede a la aplicación:
 
-Abre tu navegador y ve a http://localhost:4200 para ver la aplicación en funcionamiento.
+   Abre tu navegador y ve a http://localhost:4200 para ver la aplicación en funcionamiento.
 
 
 ## **🛠️ Tecnologías utilizadas**
