@@ -5,7 +5,6 @@
 ## **✨ Características Principales**
 
 - **Gestión de Contenidos**: Administra una base de datos de mangas, autores y editoriales.
-- **Recomendaciones Personalizadas**: Ofrece recomendaciones de mangas a los usuarios, basadas en los más actuales o en tendencias populares.
 - **Búsqueda Avanzada**: Los usuarios pueden explorar un listado de mangas con opciones de filtrado para facilitar la búsqueda de sus títulos favoritos.
 - **Detalles del Manga**: Cada manga incluye una página de detalles donde se proporciona información completa sobre el título, incluyendo el autor, la editorial, y más.
 
@@ -13,7 +12,6 @@
 
 - **Interfaz Intuitiva**: Diseñada para que la navegación y la experiencia del usuario sean lo más fluida posible.
 - **Actualizaciones en Tiempo Real**: La base de datos se actualiza constantemente para reflejar las últimas novedades del mundo del manga.
-- **Recomendaciones Dinámicas**: Las recomendaciones se actualizan en función de las nuevas publicaciones y las preferencias del usuario.
 
 ---
 
