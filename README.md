@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/041f8bcb-723e-4e1d-8fee-90e3a24bf427)# **📚 Nova-Manga**
+# **📚 Nova-Manga**
 
 **Nova-Manga** es un proyecto de Proyecto de Final de Ciclo (PFC) que consiste en una aplicación web dedicada a la gestión y recomendación de manga. La aplicación cuenta con una base de datos interna que permite gestionar libros, autores y editoriales de manera eficiente. 
 
