@@ -9,22 +9,22 @@
 - **Detalles del Manga**: Cada manga incluye una página de detalles donde se proporciona información completa sobre el título, incluyendo el autor, la editorial, y más.
 
 ## **🖼️ Imágenes del Proyecto**
-###Index ###
+## Index ##
 ![App Screenshot](/Documentation/screenshots/index.png)
 
 *Vista inicial de la aplicación, mostrando los mangas más destacados y accesos directos a diferentes secciones.*
 
-###Catálogo ###
+## Catálogo ##
 ![App Screenshot](/Documentation/screenshots/catalogo.png)
 
 *Listado completo de mangas disponibles en la base de datos, con opciones de filtrado y búsqueda avanzada.*
 
-###Detalle ###
+## Detalle ##
 ![App Screenshot](/Documentation/screenshots/detalle.png)
 
 *Página de detalles de un manga específico, mostrando información detallada como sinopsis, autor, editorial, y opciones para calificar y comentar.*
 
-###Panel de gestión de libros (como ejemplo) ###
+## Panel de gestión de libros (como ejemplo) ##
 ![App Screenshot](/Documentation/screenshots/panel1.png)
 
 *Interfaz de unos de los paneles de administración utilizado para gestionar los mangas en la base de datos, incluyendo opciones para añadir, editar y eliminar títulos.*
