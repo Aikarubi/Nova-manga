@@ -97,4 +97,7 @@ Este proyecto no solo ofrece una plataforma para la gestión de mangas, sino que
 - 📄[Documentación de Angular](https://angular.io/docs)
 - 📄[Documentación de Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
+## **📜 Licencia**
+
+Todos los derechos reservados. Este proyecto no puede ser modificado, distribuido ni utilizado sin el permiso expreso del autor.
 
