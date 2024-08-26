@@ -93,6 +93,7 @@ Este proyecto no solo ofrece una plataforma para la gestión de mangas, sino que
  
 ## **📚 Recursos Adicionales**
 
+- 📹[Video DEMO](https://youtu.be/FjjiFQ8UDxQ)
 - 📄[Documentación de Symfony](https://symfony.com/doc/current/index.html)
 - 📄[Documentación de Angular](https://angular.io/docs)
 - 📄[Documentación de Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
